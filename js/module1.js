@@ -1,25 +1,32 @@
-//----------------------- Task 1 -----------------------
 function pow() {
     var a = prompt("Enter the number :", "");
-    var b = prompt("Enter the number of involution :", "");
     a = parseInt(a);
+    console.log("Number: " + a);
+    var b = prompt("Enter the number of involution :", "");
     b = parseInt(b);
+    console.log("Involution: " + b);
 
     if (typeof a !== 'number' ||
         typeof b !== 'number' ||
         a !== a ||
         b !== b) {
-        alert("error enter! You can only enter numbers!");
+        alert("Error enter! You can only enter numbers!");
         pow();
+
     } else {
         if (b == 0) {
-            return 1;
+            return console.log("Result: 1");
         }
-        var result = 1;
-        for (var i = 1; i <= b; i++) {
-            result *= a;
+        if (b < 0) {
+            alert("Only positive number!");
+            pow();
+        } else {
+            var result = 1;
+            for (var i = 1; i <= b; i++) {
+                result *= a;
+            }
+            console.log("Result: ", result);
         }
-        console.log("Result: " , result);
     }
 }
 pow();
